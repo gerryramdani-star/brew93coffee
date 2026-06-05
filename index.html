@@ -2,6 +2,13 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    <!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Brew93coffee</title>
     <!-- Menggunakan Tailwind CSS -->
@@ -63,8 +70,30 @@
             }
         }
     </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID_HERE'); /* GANTI DENGAN PIXEL ID ANDA */
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body class="bg-blue-950 text-white min-h-screen flex items-center justify-center p-4 relative overflow-x-hidden selection:bg-blue-600 selection:text-white">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Background Elements -->
     <div class="absolute top-0 left-[-10%] w-64 h-64 md:w-72 md:h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
@@ -95,7 +124,7 @@
         <div class="space-y-3 md:space-y-4">
             
             <!-- Tombol 1: WhatsApp -->
-            <a href="#" target="_blank" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
+            <a href="#" target="_blank" onclick="fbq('track', 'Contact');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1"> <!-- min-w-0 mencegah flex item overflow -->
                         <div class="w-10 h-10 rounded-lg bg-green-500/20 flex-shrink-0 flex items-center justify-center text-green-400 group-hover:bg-green-500 group-hover:text-white transition-colors duration-300">
@@ -111,7 +140,7 @@
             </a>
 
             <!-- Tombol 2: Google Maps -->
-            <a href="https://maps.app.goo.gl/7BJPcfCZsvS3qY4y6" target="_blank" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
+            <a href="https://maps.app.goo.gl/7BJPcfCZsvS3qY4y6" target="_blank" onclick="fbq('trackCustom', 'ClickMaps');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
                         <div class="w-10 h-10 rounded-lg bg-red-500/20 flex-shrink-0 flex items-center justify-center text-red-400 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
@@ -127,7 +156,7 @@
             </a>
 
             <!-- Tombol 3: TikTok -->
-            <a href="https://www.tiktok.com/@brew93.coffee" target="_blank" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
+            <a href="https://www.tiktok.com/@brew93.coffee" target="_blank" onclick="fbq('trackCustom', 'ClickTikTok');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
                         <div class="w-10 h-10 rounded-lg bg-zinc-800/80 flex-shrink-0 flex items-center justify-center text-white group-hover:bg-black group-hover:text-white transition-colors duration-300 border border-zinc-700/50">
