@@ -69,6 +69,32 @@
                 box-shadow: 0 10px 20px -10px rgba(0,0,0,0.5);
             }
         }
+
+        /* Animasi Promo (Perhatian) */
+        @keyframes promo-shine {
+            0% { transform: translateX(-150%) skewX(-15deg); }
+            20%, 100% { transform: translateX(250%) skewX(-15deg); }
+        }
+        .animate-promo-shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+            animation: promo-shine 3s infinite;
+            z-index: 20;
+            pointer-events: none;
+        }
+        
+        @keyframes promo-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 0 0 rgba(245, 158, 11, 0); border-color: rgba(245, 158, 11, 0.2); }
+            50% { transform: scale(1.02); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 158, 11, 0.4); border-color: rgba(245, 158, 11, 0.7); }
+        }
+        .animate-promo-pulse {
+            animation: promo-pulse 2.5s infinite ease-in-out;
+        }
     </style>
 
     <!-- Meta Pixel Code -->
@@ -123,7 +149,25 @@
         <!-- Tombol List -->
         <div class="space-y-3 md:space-y-4">
             
-            <!-- Tombol 1: WhatsApp -->
+            <!-- Tombol 1: Promo -->
+            <a href="borneo_electronic_plus.html" onclick="fbq('trackCustom', 'ClaimPromo');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white relative overflow-hidden animate-promo-pulse animate-promo-shine">
+                <!-- Efek cahaya tambahan untuk promo -->
+                <div class="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="flex items-center justify-between relative z-10">
+                    <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex-shrink-0 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300 border border-amber-500/30 shadow-[0_0_10px_rgba(245,158,11,0.2)]">
+                            <i class="fa-solid fa-ticket-simple text-lg"></i>
+                        </div>
+                        <div class="text-left min-w-0 flex-1 pr-2">
+                            <h3 class="font-semibold text-sm text-amber-300">Klaim Promo: Dapatkan diskon 20%</h3>
+                            <p class="text-[10px] sm:text-xs text-gray-400 group-hover:text-gray-200 transition-colors mt-0.5 leading-snug">*Voucher diskon berlaku hanya weekend sampai dengan akhir juli 2026</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right-long text-gray-600 group-hover:text-amber-400 transform group-hover:translate-x-1 transition-all flex-shrink-0"></i>
+                </div>
+            </a>
+
+            <!-- Tombol 2: WhatsApp -->
             <a href="https://wa.me/628212225593?text=Halo%20kak,%20ada%20promo%20apa%20hari%20ini?%20saya%20tertarik%20untuk%20pesan" target="_blank" onclick="fbq('track', 'Contact');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1"> <!-- min-w-0 mencegah flex item overflow -->
@@ -139,7 +183,7 @@
                 </div>
             </a>
 
-            <!-- Tombol 2: Google Maps -->
+            <!-- Tombol 3: Google Maps -->
             <a href="https://maps.app.goo.gl/7BJPcfCZsvS3qY4y6" target="_blank" onclick="fbq('trackCustom', 'ClickMaps');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
@@ -149,22 +193,6 @@
                         <div class="text-left min-w-0 flex-1 pr-2">
                             <h3 class="font-semibold text-sm truncate">Lokasi Coffee Shop</h3>
                             <p class="text-xs text-gray-500 group-hover:text-gray-300 transition-colors truncate">Lihat rute di Google Maps</p>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-arrow-right-long text-gray-600 group-hover:text-white transform group-hover:translate-x-1 transition-all flex-shrink-0"></i>
-                </div>
-            </a>
-
-            <!-- Tombol 3: TikTok -->
-            <a href="https://www.tiktok.com/@brew93.coffee" target="_blank" onclick="fbq('trackCustom', 'ClickTikTok');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
-                        <div class="w-10 h-10 rounded-lg bg-zinc-800/80 flex-shrink-0 flex items-center justify-center text-white group-hover:bg-black group-hover:text-white transition-colors duration-300 border border-zinc-700/50">
-                            <i class="fa-brands fa-tiktok text-lg"></i>
-                        </div>
-                        <div class="text-left min-w-0 flex-1 pr-2">
-                            <h3 class="font-semibold text-sm truncate">TikTok Brew93coffee</h3>
-                            <p class="text-xs text-gray-500 group-hover:text-gray-300 transition-colors truncate">Tonton video menarik kami</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-arrow-right-long text-gray-600 group-hover:text-white transform group-hover:translate-x-1 transition-all flex-shrink-0"></i>
