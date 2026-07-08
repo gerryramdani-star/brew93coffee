@@ -150,7 +150,7 @@
         <div class="space-y-3 md:space-y-4">
             
             <!-- Tombol 1: Promo -->
-            <a href="brew93promo.html" onclick="fbq('trackCustom', 'ClaimPromo');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white relative overflow-hidden animate-promo-pulse animate-promo-shine">
+            <a href="brew93promo.html" onclick="trackCTA('Klaim Promo', 'brew93promo.html');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white relative overflow-hidden animate-promo-pulse animate-promo-shine">
                 <!-- Efek cahaya tambahan untuk promo -->
                 <div class="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="flex items-center justify-between relative z-10">
@@ -168,7 +168,7 @@
             </a>
 
             <!-- Tombol 2: WhatsApp -->
-            <a href="https://wa.me/628212225593?text=Halo%20kak,%20ada%20promo%20apa%20hari%20ini?%20saya%20tertarik%20untuk%20pesan" target="_blank" onclick="fbq('track', 'Contact');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
+            <a href="https://wa.me/628212225593?text=Halo%20kak,%20ada%20promo%20apa%20hari%20ini?%20saya%20tertarik%20untuk%20pesan" target="_blank" onclick="trackCTA('WhatsApp Admin', 'https://wa.me/628212225593');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1"> <!-- min-w-0 mencegah flex item overflow -->
                         <div class="w-10 h-10 rounded-lg bg-green-500/20 flex-shrink-0 flex items-center justify-center text-green-400 group-hover:bg-green-500 group-hover:text-white transition-colors duration-300">
@@ -184,7 +184,7 @@
             </a>
 
             <!-- Tombol 3: Google Maps -->
-            <a href="https://maps.app.goo.gl/7BJPcfCZsvS3qY4y6" target="_blank" onclick="fbq('trackCustom', 'ClickMaps');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
+            <a href="https://maps.app.goo.gl/7BJPcfCZsvS3qY4y6" target="_blank" onclick="trackCTA('Lokasi Google Maps', 'https://maps.app.goo.gl/7BJPcfCZsvS3qY4y6');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
                         <div class="w-10 h-10 rounded-lg bg-red-500/20 flex-shrink-0 flex items-center justify-center text-red-400 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
@@ -209,6 +209,18 @@
     </main>
 
     <script>
+        // Fungsi untuk push data event ke dataLayer GTM
+        function trackCTA(buttonName, destinationUrl) {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'click_cta',
+                'button_name': buttonName,
+                'destination_url': destinationUrl
+            });
+            // Hapus atau komen console.log ini jika sudah dipublish
+            console.log('Event CTA Diklik:', buttonName, destinationUrl);
+        }
+
         console.log("Halaman Responsive Mobile Siap");
     </script>
 </body>
