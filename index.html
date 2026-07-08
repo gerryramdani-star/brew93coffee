@@ -150,7 +150,7 @@
         <div class="space-y-3 md:space-y-4">
             
             <!-- Tombol 1: Promo -->
-            <a href="brew93promo.html" onclick="trackCTA('Klaim Promo', 'brew93promo.html');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white relative overflow-hidden animate-promo-pulse animate-promo-shine">
+            <a href="brew93promo.html" onclick="trackCTA('Klaim Promo', 'brew93promo.html'); return false;" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white relative overflow-hidden animate-promo-pulse animate-promo-shine">
                 <!-- Efek cahaya tambahan untuk promo -->
                 <div class="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="flex items-center justify-between relative z-10">
@@ -209,16 +209,29 @@
     </main>
 
     <script>
-        // Fungsi untuk push data event ke dataLayer GTM
+        // Fungsi untuk push data event ke dataLayer GTM dengan jeda (delay) untuk link internal
         function trackCTA(buttonName, destinationUrl) {
+            // 1. Push data ke GTM
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 'event': 'click_cta',
                 'button_name': buttonName,
                 'destination_url': destinationUrl
             });
-            // Hapus atau komen console.log ini jika sudah dipublish
-            console.log('Event CTA Diklik:', buttonName, destinationUrl);
+            
+            console.log('Event CTA Diklik (Proses pengiriman...):', buttonName, destinationUrl);
+
+            // 2. Cek apakah ini tombol Promo (yang pindah halaman di tab yang sama)
+            // Tombol Promo tidak memiliki 'http' di depannya (karena link internal 'brew93promo.html')
+            if (!destinationUrl.startsWith('http')) {
+                // Cegah browser pindah halaman secara instan (ini sudah ditangani oleh return false di onclick jika mau, tapi kita gunakan setTimeout untuk lebih aman jika dipanggil langsung)
+                
+                // Beri jeda 300ms agar GTM/GA4 sempat mengirim data sebelum pindah halaman
+                setTimeout(function() {
+                    window.location.href = destinationUrl;
+                }, 300);
+            }
+            // Tombol lain (WA/Maps) yang pakai target="_blank" akan berjalan normal tanpa delay ini.
         }
 
         console.log("Halaman Responsive Mobile Siap");
