@@ -7,7 +7,7 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M4CZ94NQ');</script>
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
     <!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Brew93coffee</title>
@@ -21,7 +21,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            -webkit-tap-highlight-color: transparent; /* Menghilangkan highlight biru saat tap di Android/iOS */
+            -webkit-tap-highlight-color: transparent;
         }
 
         /* Animasi Background */
@@ -31,15 +31,9 @@
             66% { transform: translate(-20px, 20px) scale(0.9); }
             100% { transform: translate(0px, 0px) scale(1); }
         }
-        .animate-blob {
-            animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-            animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-            animation-delay: 4s;
-        }
+        .animate-blob { animation: blob 7s infinite; }
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
 
         /* Glass Effect */
         .glass-card {
@@ -57,7 +51,7 @@
         }
 
         .glass-btn:active {
-            transform: scale(0.98); /* Efek tekan halus di HP */
+            transform: scale(0.98); 
             background: rgba(255, 255, 255, 0.1);
         }
 
@@ -70,7 +64,7 @@
             }
         }
 
-        /* Animasi Promo (Perhatian) */
+        /* Animasi Promo */
         @keyframes promo-shine {
             0% { transform: translateX(-150%) skewX(-15deg); }
             20%, 100% { transform: translateX(250%) skewX(-15deg); }
@@ -107,17 +101,17 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1390306159656007'); /* GANTI DENGAN PIXEL ID ANDA */
+    fbq('init', 'YOUR_PIXEL_ID_HERE'); 
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1390306159656007&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
 </head>
 <body class="bg-blue-950 text-white min-h-screen flex items-center justify-center p-4 relative overflow-x-hidden selection:bg-blue-600 selection:text-white">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4CZ94NQ"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -127,22 +121,19 @@
     <div class="absolute -bottom-8 left-20 w-64 h-64 md:w-72 md:h-72 bg-blue-800 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-4000"></div>
 
     <!-- Main Card Container -->
-    <!-- PERBAIKAN: Mengubah padding p-8 menjadi p-6 (mobile) dan md:p-8 (desktop) -->
     <main class="glass-card w-full max-w-md rounded-2xl p-6 md:p-8 relative z-10">
         
         <!-- Header -->
         <div class="text-center mb-6 md:mb-8">
             <div class="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-600/10 mb-4 ring-2 ring-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)] overflow-hidden">
-                 <!-- Contoh Placeholder Gambar jika user ingin mengganti ikon dengan gambar -->
-                 <!-- <img src="URL_FOTO" class="w-full h-full object-cover"> -->
-                <img src="https://raw.githubusercontent.com/gerryramdani-star/brew93coffee/refs/heads/main/asset/logobrew%2093.jpg" class="w-full h-full object-cover">
-            </div>
-            <!-- PERBAIKAN: Font size responsif text-2xl di HP, text-3xl di Desktop -->
+                <img src="https://raw.githubusercontent.com/gerryramdani-star/brew93coffee/refs/heads/main/asset/logobrew%2093.jpg" class="w-full h-full object-cover" alt="Brew93coffee Logo">
+            </div> <!-- DIV INI SEBELUMNYA LUPA DITUTUP -->
+            
             <h1 class="text-2xl md:text-3xl font-bold tracking-tight mb-2 text-white">
                 Brew93coffee
             </h1>
             <p class="text-slate-300 text-xs md:text-sm font-light px-4">
-                Coffee Shop (Bites & Brews)
+                Premium Coffee Experience
             </p>
         </div>
 
@@ -150,41 +141,24 @@
         <div class="space-y-3 md:space-y-4">
             
             <!-- Tombol 1: Promo -->
-            <a href="https://promo-brew93.netlify.app" onclick="trackCTA('Klaim Promo'); return false;" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white relative overflow-hidden animate-promo-pulse animate-promo-shine">
-                <!-- Efek cahaya tambahan untuk promo -->
+            <a href="https://promo-brew93.netlify.app" onclick="fbq('trackCustom', 'ClaimPromo');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white relative overflow-hidden animate-promo-pulse animate-promo-shine border-amber-500/30">
                 <div class="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="flex items-center justify-between relative z-10">
                     <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
-                        <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex-shrink-0 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300 border border-amber-500/30 shadow-[0_0_10px_rgba(245,158,11,0.2)]">
-                            <i class="fa-solid fa-ticket-simple text-lg"></i>
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex-shrink-0 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                            <i class="fa-solid fa-ticket text-lg"></i>
                         </div>
                         <div class="text-left min-w-0 flex-1 pr-2">
-                            <h3 class="font-semibold text-sm text-amber-300">Klaim Promo: Dapatkan diskon 20%</h3>
-                            <p class="text-[10px] sm:text-xs text-gray-400 group-hover:text-gray-200 transition-colors mt-0.5 leading-snug">*Voucher diskon berlaku hanya weekend sampai dengan akhir juli 2026</p>
+                            <h3 class="font-bold text-sm text-amber-400">Klaim Promo: Dapatkan diskon 20%</h3>
+                            <p class="text-[11px] text-amber-100/70 mt-0.5 leading-tight">Voucher diskon berlaku hanya weekend sampai dengan akhir juli 2026</p>
                         </div>
                     </div>
-                    <i class="fa-solid fa-arrow-right-long text-gray-600 group-hover:text-amber-400 transform group-hover:translate-x-1 transition-all flex-shrink-0"></i>
+                    <i class="fa-solid fa-chevron-right text-amber-500/50 group-hover:text-amber-400 transform group-hover:translate-x-1 transition-all flex-shrink-0"></i>
                 </div>
             </a>
 
-            <!-- Tombol 2: WhatsApp -->
-            <a href="https://wa.me/628212225593?text=Halo%20kak,%20ada%20promo%20apa%20hari%20ini?%20saya%20tertarik%20untuk%20pesan" target="_blank" onclick="trackCTA('WhatsApp Admin', 'https://wa.me/628212225593');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1"> <!-- min-w-0 mencegah flex item overflow -->
-                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex-shrink-0 flex items-center justify-center text-green-400 group-hover:bg-green-500 group-hover:text-white transition-colors duration-300">
-                            <i class="fa-brands fa-whatsapp text-xl"></i>
-                        </div>
-                        <div class="text-left min-w-0 flex-1 pr-2">
-                            <h3 class="font-semibold text-sm truncate">WhatsApp Admin</h3>
-                            <p class="text-xs text-gray-500 group-hover:text-gray-300 transition-colors truncate">Hubungi kami via pesan instan</p>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-arrow-right-long text-gray-600 group-hover:text-white transform group-hover:translate-x-1 transition-all flex-shrink-0"></i>
-                </div>
-            </a>
-
-            <!-- Tombol 3: Google Maps -->
-            <a href="https://maps.app.goo.gl/7BJPcfCZsvS3qY4y6" target="_blank" onclick="trackCTA('Lokasi Google Maps', 'https://maps.app.goo.gl/7BJPcfCZsvS3qY4y6');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
+            <!-- Tombol 2: Google Maps -->
+            <a href="https://maps.app.goo.gl/7BJPcfCZsvS3qY4y6" target="_blank" onclick="fbq('trackCustom', 'ClickMaps');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
                         <div class="w-10 h-10 rounded-lg bg-red-500/20 flex-shrink-0 flex items-center justify-center text-red-400 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
@@ -192,10 +166,74 @@
                         </div>
                         <div class="text-left min-w-0 flex-1 pr-2">
                             <h3 class="font-semibold text-sm truncate">Lokasi Coffee Shop</h3>
-                            <p class="text-xs text-gray-500 group-hover:text-gray-300 transition-colors truncate">Lihat rute di Google Maps</p>
+                            <p class="text-xs text-gray-400 group-hover:text-gray-300 transition-colors truncate">Lihat rute di Google Maps</p>
                         </div>
                     </div>
-                    <i class="fa-solid fa-arrow-right-long text-gray-600 group-hover:text-white transform group-hover:translate-x-1 transition-all flex-shrink-0"></i>
+                    <i class="fa-solid fa-arrow-right-long text-gray-500 group-hover:text-white transform group-hover:translate-x-1 transition-all flex-shrink-0"></i>
+                </div>
+            </a>
+
+            <!-- Tombol 3: WhatsApp -->
+            <a href="https://wa.me/628212225593?text=Halo%20kak,%20ada%20promo%20apa%20hari%20ini?%20saya%20tertarik%20untuk%20pesan" target="_blank" onclick="fbq('track', 'Contact');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex-shrink-0 flex items-center justify-center text-green-400 group-hover:bg-green-500 group-hover:text-white transition-colors duration-300">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                        </div>
+                        <div class="text-left min-w-0 flex-1 pr-2">
+                            <h3 class="font-semibold text-sm truncate">WhatsApp Admin</h3>
+                            <p class="text-xs text-gray-400 group-hover:text-gray-300 transition-colors truncate">Hubungi kami via pesan instan</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right-long text-gray-500 group-hover:text-white transform group-hover:translate-x-1 transition-all flex-shrink-0"></i>
+                </div>
+            </a>
+
+            <!-- Tombol 4: GoFood -->
+            <a href="https://gofood.link/a/UbdNoD7" target="_blank" onclick="fbq('trackCustom', 'ClickGoFood');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
+                        <div class="w-10 h-10 rounded-lg bg-red-600/20 flex-shrink-0 flex items-center justify-center text-red-500 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
+                            <i class="fa-solid fa-motorcycle"></i>
+                        </div>
+                        <div class="text-left min-w-0 flex-1 pr-2">
+                            <h3 class="font-semibold text-sm truncate">GoFood</h3>
+                            <p class="text-xs text-gray-400 group-hover:text-gray-300 transition-colors truncate">Pesan menu kami di Gojek</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right-long text-gray-500 group-hover:text-white transform group-hover:translate-x-1 transition-all flex-shrink-0"></i>
+                </div>
+            </a>
+
+            <!-- Tombol 5: GrabFood -->
+            <a href="https://r.grab.com/g/6-20260804_115006_d27ed723f3cc46b9ab936c3b8a887c14_MEXMPS-6-C8CXAP6WWA3DUA" target="_blank" onclick="fbq('trackCustom', 'ClickGrabFood');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex-shrink-0 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                        <div class="text-left min-w-0 flex-1 pr-2">
+                            <h3 class="font-semibold text-sm truncate">GrabFood</h3>
+                            <p class="text-xs text-gray-400 group-hover:text-gray-300 transition-colors truncate">Pesan menu kami di Grab</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right-long text-gray-500 group-hover:text-white transform group-hover:translate-x-1 transition-all flex-shrink-0"></i>
+                </div>
+            </a>
+
+            <!-- Tombol 6: ShopeeFood -->
+            <a href="https://shopee.co.id/universal-link/now-food/shop/23431633?deep_and_deferred=1&shareChannel=copy_link" target="_blank" onclick="fbq('trackCustom', 'ClickShopeeFood');" class="glass-btn block w-full rounded-xl p-3.5 md:p-4 group no-underline text-white">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
+                        <div class="w-10 h-10 rounded-lg bg-orange-500/20 flex-shrink-0 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <div class="text-left min-w-0 flex-1 pr-2">
+                            <h3 class="font-semibold text-sm truncate">ShopeeFood</h3>
+                            <p class="text-xs text-gray-400 group-hover:text-gray-300 transition-colors truncate">Pesan menu kami di Shopee</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right-long text-gray-500 group-hover:text-white transform group-hover:translate-x-1 transition-all flex-shrink-0"></i>
                 </div>
             </a>
 
@@ -209,31 +247,6 @@
     </main>
 
     <script>
-        // Fungsi untuk push data event ke dataLayer GTM dengan jeda (delay) untuk link internal
-        function trackCTA(buttonName, destinationUrl) {
-            // 1. Push data ke GTM
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'click_cta',
-                'button_name': buttonName,
-                'destination_url': destinationUrl
-            });
-            
-            console.log('Event CTA Diklik (Proses pengiriman...):', buttonName, destinationUrl);
-
-            // 2. Cek apakah ini tombol Promo (yang pindah halaman di tab yang sama)
-            // Tombol Promo tidak memiliki 'http' di depannya (karena link internal 'brew93promo.html')
-            if (!destinationUrl.startsWith('http')) {
-                // Cegah browser pindah halaman secara instan (ini sudah ditangani oleh return false di onclick jika mau, tapi kita gunakan setTimeout untuk lebih aman jika dipanggil langsung)
-                
-                // Beri jeda 300ms agar GTM/GA4 sempat mengirim data sebelum pindah halaman
-                setTimeout(function() {
-                    window.location.href = destinationUrl;
-                }, 300);
-            }
-            // Tombol lain (WA/Maps) yang pakai target="_blank" akan berjalan normal tanpa delay ini.
-        }
-
         console.log("Halaman Responsive Mobile Siap");
     </script>
 </body>
